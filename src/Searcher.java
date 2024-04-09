@@ -4,6 +4,7 @@ public class Searcher implements SearchOperations{
 	private Set<String> artists;
 	private Set<String> genres;
 	private Set<String> titles;
+	private Map<Recording, String> mapTitle;
 
 
 	public Searcher(Collection<Recording> data) {
@@ -19,8 +20,8 @@ public class Searcher implements SearchOperations{
 			for(String g: recording.getGenre()){
 				genres.add(g);
 			}
-		}
 
+		}
 	}
 
 	@Override
