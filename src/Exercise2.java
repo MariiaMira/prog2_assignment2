@@ -25,30 +25,30 @@ public class Exercise2 {
 
         Searcher sut = new Searcher(new Data().getRecordings());
 
-//		long numberOfArtists = sut.numberOfArtists();
-//		if (numberOfArtists != NUMBER_OF_ARTISTS) {
-//			throw new AssertionError("numberOfArtists: wrong number of artists.");
-//		}
+    	long numberOfArtists = sut.numberOfArtists();
+    	if (numberOfArtists != NUMBER_OF_ARTISTS) {
+    		throw new AssertionError("numberOfArtists: wrong number of artists.");
+    	}
 
-//		long numberOfGenres = sut.numberOfGenres();
-//		if (numberOfGenres != NUMBER_OF_GENRES) {
-//			throw new AssertionError("numberOfGenres: wrong number of genres.");
-//		}
+    	long numberOfGenres = sut.numberOfGenres();
+    	if (numberOfGenres != NUMBER_OF_GENRES) {
+    		throw new AssertionError("numberOfGenres: wrong number of genres.");
+    	}
 
-//		long numberOfTitles = sut.numberOfTitles();
-//		if (numberOfTitles != NUMBER_OF_RECORDINGS) {
-//			throw new AssertionError("numberOfTitles: wrong number of titles.");
-//		}
+		long numberOfTitles = sut.numberOfTitles();
+		if (numberOfTitles != NUMBER_OF_RECORDINGS) {
+			throw new AssertionError("numberOfTitles: wrong number of titles.");
+		}
 
 //		Collection<Recording> existingGenre = sut.getRecordingsByGenre(EXISTING_GENRE);
 //		if (existingGenre.size() != NUMBER_OF_JAZZ_RECORDINGS) {
-//			throw new AssertionError("getRecordingsByGenre: wrong number of recordings.");
+//		throw new AssertionError("getRecordingsByGenre: wrong number of recordings.");
 //		}
 
-//		boolean shouldBeTrue = sut.doesArtistExist(EXISTING_ARTIST);
-//		if (!shouldBeTrue) {
-//			throw new AssertionError("doesArtistExist: didn't find an existing artist.");
-//		}
+        boolean shouldBeTrue = sut.doesArtistExist(EXISTING_ARTIST);
+        if (!shouldBeTrue) {
+            throw new AssertionError("doesArtistExist: didn't find an existing artist.");
+        }
 
 		Collection<String> genres = sut.getGenres();
 		if (genres.size() != NUMBER_OF_GENRES) {
