@@ -1,4 +1,5 @@
 import java.util.Collection;
+import java.util.Objects;
 import java.util.Set;
 
 public class Recording {
@@ -34,6 +35,11 @@ public class Recording {
 
 	public int getYear() {
 		return year;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(title, artist, year);
 	}
 
 	@Override
