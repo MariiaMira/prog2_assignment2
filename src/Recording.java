@@ -39,7 +39,7 @@ public class Recording {
 
 	@Override
 	public boolean equals(Object obj){
-
+		return false;
 	}
 
 	@Override

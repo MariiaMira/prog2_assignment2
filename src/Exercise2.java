@@ -50,10 +50,10 @@ public class Exercise2 {
 //			throw new AssertionError("doesArtistExist: didn't find an existing artist.");
 //		}
 
-//		Collection<String> genres = sut.getGenres();
-//		if (genres.size() != NUMBER_OF_GENRES) {
-//			throw new AssertionError("getGenres: wrong number of genres.");
-//		}
+		Collection<String> genres = sut.getGenres();
+		if (genres.size() != NUMBER_OF_GENRES) {
+			throw new AssertionError("getGenres: wrong number of genres.");
+		}
 
 //		Recording recordingByName = sut.getRecordingByName(EXISTING_TITLE);
 //		if (recordingByName == null) {
