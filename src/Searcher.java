@@ -9,7 +9,6 @@ public class Searcher implements SearchOperations{
 	public Searcher(Collection<Recording> data) {
 		
 		Collection<Recording> recordings = data;
-
 		artists = new HashSet<>();
 		genres = new HashSet<>();
 		titles = new HashSet<>();
@@ -17,7 +16,9 @@ public class Searcher implements SearchOperations{
 		for (Recording recording : recordings) {
 			artists.add(recording.getArtist());
 			titles.add(recording.getTitle());
-            genres.addAll(recording.getGenre());
+			for(String g: recording.getGenre()){
+				genres.add(g);
+			}
 		}
 
 	}
