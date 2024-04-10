@@ -39,7 +39,11 @@ public class Recording {
 
 	@Override
 	public boolean equals(Object obj){
-		return false;
+		if (this == obj) return true;
+		if (!(obj instanceof Recording recording)) return false;
+        return year == recording.year &&
+				Objects.equals(title, recording.title) &&
+				Objects.equals(artist, recording.artist);
 	}
 
 	@Override
