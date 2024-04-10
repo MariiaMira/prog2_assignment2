@@ -84,7 +84,7 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Collection<Recording> getRecordingsByGenre(String genre) {
-		return Collections.unmodifiableSet(recordingsByGenre.get(genre));
+		return Collections.unmodifiableSet(recordingsByGenre.getOrDefault(genre, new HashSet<>()));
 	}
 
 	@Override
