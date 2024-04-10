@@ -73,10 +73,10 @@ public class Exercise2 {
 //			throw new AssertionError("getRecordingsByArtistOrderedByYearAsc: wrong number of recordings.");
 //		}
 
-//		Collection<Recording> recordingsByGenre = sut.getRecordingsByGenre(EXISTING_GENRE);
-//		if (recordingsByGenre.size() != NUMBER_OF_JAZZ_RECORDINGS) {
-//			throw new AssertionError("getRecordingsByGenre: wrong number of recordings.");
-//		}
+		Collection<Recording> recordingsByGenre = sut.getRecordingsByGenre(EXISTING_GENRE);
+		if (recordingsByGenre.size() != NUMBER_OF_JAZZ_RECORDINGS) {
+			throw new AssertionError("getRecordingsByGenre: wrong number of recordings.");
+		}
 
 //		Collection<Recording> recordingsByGenreAndYear = sut.getRecordingsByGenreAndYear(EXISTING_GENRE, 1960, 1970);
 //		if (recordingsByGenreAndYear.size() != NUMBER_OF_JAZZ_RECORDINGS_BETWEEN_1960_AND_1970) {

@@ -4,8 +4,8 @@ public class Searcher implements SearchOperations{
 	private Set<String> artists = new HashSet<>();
 	private Set<String> genres = new HashSet<>();
 	private Set<String> titles = new HashSet<>();
-	private Map<String, Recording> getRecordingByTitle = new HashMap<>();
-	private Map<String, Set<Recording>> getRecordingsByGenre = new HashMap<>();
+	private Map<String, Recording> recordingByTitle = new HashMap<>();
+	private Map<String, Set<Recording>> recordingsByGenre = new HashMap<>();
 
 
 	public Searcher(Collection<Recording> data) {
@@ -16,7 +16,13 @@ public class Searcher implements SearchOperations{
 			artists.add(recording.getArtist());
 			titles.add(recording.getTitle());
             genres.addAll(recording.getGenre());
-			getRecordingByTitle.put(recording.getTitle(), recording);
+			recordingByTitle.put(recording.getTitle(), recording);
+			for (String genre : recording.getGenre()) {
+				if (!recordingsByGenre.containsKey(genre)) {
+					recordingsByGenre.put(genre, new HashSet<>());
+				}
+				recordingsByGenre.get(genre).add(recording);
+			}
 		}
 
 	}
@@ -46,7 +52,7 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Recording getRecordingByName(String title) {
-		return getRecordingByTitle.get(title);
+		return recordingByTitle.get(title);
 	}
 
 	@Override
@@ -61,7 +67,7 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Collection<Recording> getRecordingsByGenre(String genre) {
-		return null;
+		return Collections.unmodifiableSet(recordingsByGenre.get(genre));
 	}
 
 	@Override
