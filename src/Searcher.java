@@ -91,8 +91,15 @@ public class Searcher implements SearchOperations{
 	@Override
 	public Collection<Recording> getRecordingsByGenreAndYear(String genre, int yearFrom, int yearTo) {
 		Set<Recording> genreRecordings = recordingsByGenre.getOrDefault(genre, Collections.emptySet());
+		Set<Recording> filteredList = new HashSet<>();
 
-		return ;
+		for (Recording recording : genreRecordings){
+			if(recording.getYear() >= yearFrom && recording.getYear() <= yearTo) {
+				filteredList.add(recording);
+			}
+		}
+
+		return Collections.unmodifiableCollection(filteredList);
 	}
 
 	@Override
