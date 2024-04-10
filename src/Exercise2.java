@@ -22,6 +22,7 @@ public class Exercise2 {
     private static final Set<Recording> OFFERED_RECORDINGS = Set.of(EXISTING_RECORDING, MISSING_RECORDING);
 
     public static void main(String[] args) {
+        double start = System.currentTimeMillis();
 
         Searcher sut = new Searcher(new Data().getRecordings());
 
@@ -55,7 +56,7 @@ public class Exercise2 {
 			throw new AssertionError("getGenres: wrong number of genres.");
 		}
 
-        long start = System.currentTimeMillis();
+
 		Recording recordingByName = sut.getRecordingByName(EXISTING_TITLE);
 		if (recordingByName == null) {
 			throw new AssertionError("getRecordingByName: existing record wasn't found.");

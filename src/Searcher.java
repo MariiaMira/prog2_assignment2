@@ -5,6 +5,7 @@ public class Searcher implements SearchOperations{
 	private Set<String> genres = new HashSet<>();
 	private Set<String> titles = new HashSet<>();
 	private Map<String, Recording> getRecordingByTitle = new HashMap<>();
+	private Map<String, Set<Recording>> getRecordingsByGenre = new HashMap<>();
 
 
 	public Searcher(Collection<Recording> data) {
