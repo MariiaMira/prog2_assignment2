@@ -64,8 +64,16 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Collection<Recording> getRecordingsAfter(int year) {
-		recordingByYear.
+
+		// Hitta nyckel till year
+		recordingByYear;
+
+		// return resten av map:en
+
+
+
 		return Collections.unmodifiableCollection();
+
 	}
 
 	@Override
