@@ -1,17 +1,14 @@
 import java.util.*;
 
 public class Searcher implements SearchOperations{
-	private Set<String> artists;
-	private Set<String> genres;
-	private Set<String> titles;
+	private Set<String> artists = new HashSet<>();
+	private Set<String> genres = new HashSet<>();
+	private Set<String> titles = new HashSet<>();
 
 
 	public Searcher(Collection<Recording> data) {
 		
 		Collection<Recording> recordings = data;
-		artists = new HashSet<>();
-		genres = new HashSet<>();
-		titles = new HashSet<>();
 
 		for (Recording recording : recordings) {
 			artists.add(recording.getArtist());
