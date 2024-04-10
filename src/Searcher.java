@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Searcher implements SearchOperations{
 	private Set<String> artists = new HashSet<>();
@@ -113,7 +112,5 @@ public class Searcher implements SearchOperations{
 		}
 		return Collections.unmodifiableSet(newRecordings);
 	}
-
-
 }
 
