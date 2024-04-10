@@ -104,8 +104,16 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Collection<Recording> offerHasNewRecordings(Collection<Recording> offered) {
-		return null;
+		Set<Recording> newRecordings = new HashSet<>();
+
+		for (Recording recording : offered) {
+			if (!recordingByTitle.containsKey(recording.getTitle())) {
+				newRecordings.add(recording);
+			}
+		}
+		return Collections.unmodifiableSet(newRecordings);
 	}
+
 
 }
 
