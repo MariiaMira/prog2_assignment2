@@ -64,7 +64,6 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Collection<Recording> getRecordingsAfter(int year) {
-
 		Collection<Recording> allRecordings = new HashSet<>(); //för att undvika dubbletter
         Map<Integer, Set<Recording>> subMap = recordingByYear.tailMap(year);
 
