@@ -6,6 +6,7 @@ public class Searcher implements SearchOperations{
 	private Set<String> titles = new HashSet<>();
 	private Map<String, Recording> recordingByTitle = new HashMap<>();
 	private Map<String, Set<Recording>> recordingsByGenre = new HashMap<>();
+	private Map<Integer, Set<Recording>> recordingByYear = new TreeMap<>();
 
 
 	public Searcher(Collection<Recording> data) {
@@ -23,6 +24,12 @@ public class Searcher implements SearchOperations{
 				}
 				recordingsByGenre.get(genre).add(recording);
 			}
+			if(!recordingByYear.containsKey(recording.getYear())){
+				recordingByYear.put(recording.getYear(), new HashSet<>());
+			}
+			recordingByYear.get(recording.getYear()).add(recording);
+
+
 		}
 
 	}
@@ -57,7 +64,8 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Collection<Recording> getRecordingsAfter(int year) {
-		return null;
+		recordingByYear.
+		return Collections.unmodifiableCollection();
 	}
 
 	@Override
