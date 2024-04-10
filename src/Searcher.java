@@ -95,7 +95,6 @@ public class Searcher implements SearchOperations{
 		return ;
 	}
 
-
 	@Override
 	public Collection<Recording> offerHasNewRecordings(Collection<Recording> offered) {
 		return null;
