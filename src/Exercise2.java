@@ -63,10 +63,10 @@ public class Exercise2 {
 		}
         System.out.println(System.currentTimeMillis() - start);
 
-//		Collection<Recording> recordingsAfter = sut.getRecordingsAfter(2010);
-//		if (recordingsAfter.size() != NUMBER_OF_RECORDINGS_AFTER_2010) {
-//			throw new AssertionError("getRecordingsAfter: wrong number of recordings.");
-//		}
+		Collection<Recording> recordingsAfter = sut.getRecordingsAfter(2010);
+		if (recordingsAfter.size() != NUMBER_OF_RECORDINGS_AFTER_2010) {
+			throw new AssertionError("getRecordingsAfter: wrong number of recordings.");
+		}
 
 //		SortedSet<Recording> recordingsByArtistOrderedByYearAsc = sut.getRecordingsByArtistOrderedByYearAsc(EXISTING_ARTIST);
 //		if (recordingsByArtistOrderedByYearAsc.size() != NUMBER_OF_RECORDINGS_BY_COLTRANE) {

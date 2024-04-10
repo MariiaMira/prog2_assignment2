@@ -6,7 +6,7 @@ public class Searcher implements SearchOperations{
 	private Set<String> titles = new HashSet<>();
 	private Map<String, Recording> recordingByTitle = new HashMap<>();
 	private Map<String, Set<Recording>> recordingsByGenre = new HashMap<>();
-	private Map<Integer, Set<Recording>> recordingByYear = new TreeMap<>();
+	private SortedMap<Integer, Set<Recording>> recordingByYear = new TreeMap<>();
 
 
 	public Searcher(Collection<Recording> data) {
@@ -65,15 +65,13 @@ public class Searcher implements SearchOperations{
 	@Override
 	public Collection<Recording> getRecordingsAfter(int year) {
 
-		// Hitta nyckel till year
-		recordingByYear;
+		Collection<Recording> allRecordings = new HashSet<>(); //för att undvika dubbletter
+        Map<Integer, Set<Recording>> subMap = recordingByYear.tailMap(year);
 
-		// return resten av map:en
-
-
-
-		return Collections.unmodifiableCollection();
-
+		for (Set<Recording> recordings : subMap.values()) {
+			allRecordings.addAll(recordings);
+		}
+        return Collections.unmodifiableCollection(allRecordings);
 	}
 
 	@Override
