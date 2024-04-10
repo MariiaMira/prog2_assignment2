@@ -124,9 +124,6 @@ public class Searcher implements SearchOperations{
 		return Collections.unmodifiableCollection(rec);
 	}
 
-	public Collection<Recording> optionalGetRecordingByArtistORderedByTitleAsc(){
-
-	}
 
 
 }
