@@ -115,8 +115,17 @@ public class Searcher implements SearchOperations{
 	}
 
 	public Collection<Recording> optionalGetRecordingsBefore(int year){
-		Collection<Set<Recording>> recBefore = recordingByYear.headMap(year).values();
-		return Collections.unmodifiableCollection(recBefore);
+		SortedMap<Integer, Set<Recording>> recBefore = recordingByYear.headMap(year);
+		Collection<Recording> rec = new HashSet<>();
+
+		for(Map.Entry<Integer, Set<Recording>> r: recBefore.entrySet()){
+			rec.addAll(r.getValue());
+		}
+		return Collections.unmodifiableCollection(rec);
+	}
+
+	public Collection<Recording> optionalGetRecordingByArtistORderedByTitleAsc(){
+
 	}
 
 

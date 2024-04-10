@@ -88,12 +88,12 @@ public class Exercise2 {
 //			throw new AssertionError("offerHasNewRecordings: wrong number of recordings.");
 //		}
 
-//		Collection<Recording> optionalGetRecordingsBefore = sut.optionalGetRecordingsBefore(1960);
-//		if (optionalGetRecordingsBefore != null) {
-//			if (optionalGetRecordingsBefore.size() != NUMBER_OF_RECORDINGS_BEFORE_1960) {
-//				throw new AssertionError("optionalGetRecordingsBefore: wrong number of recordings.");
-//			}
-//		}
+		Collection<Recording> optionalGetRecordingsBefore = sut.optionalGetRecordingsBefore(1960);
+		if (optionalGetRecordingsBefore != null) {
+			if (optionalGetRecordingsBefore.size() != NUMBER_OF_RECORDINGS_BEFORE_1960) {
+				throw new AssertionError("optionalGetRecordingsBefore: wrong number of recordings.");
+			}
+		}
 
 //		SortedSet<Recording> optionalGetRecordingsByArtistOrderedByTitleAsc = sut.optionalGetRecordingsByArtistOrderedByTitleAsc(EXISTING_ARTIST);
 //		if (optionalGetRecordingsByArtistOrderedByTitleAsc != null) {
