@@ -68,10 +68,10 @@ public class Exercise2 {
 			throw new AssertionError("getRecordingsAfter: wrong number of recordings.");
 		}
 
-//		SortedSet<Recording> recordingsByArtistOrderedByYearAsc = sut.getRecordingsByArtistOrderedByYearAsc(EXISTING_ARTIST);
-//		if (recordingsByArtistOrderedByYearAsc.size() != NUMBER_OF_RECORDINGS_BY_COLTRANE) {
-//			throw new AssertionError("getRecordingsByArtistOrderedByYearAsc: wrong number of recordings.");
-//		}
+		SortedSet<Recording> recordingsByArtistOrderedByYearAsc = sut.getRecordingsByArtistOrderedByYearAsc(EXISTING_ARTIST);
+		if (recordingsByArtistOrderedByYearAsc.size() != NUMBER_OF_RECORDINGS_BY_COLTRANE) {
+			throw new AssertionError("getRecordingsByArtistOrderedByYearAsc: wrong number of recordings.");
+		}
 
 		Collection<Recording> recordingsByGenre = sut.getRecordingsByGenre(EXISTING_GENRE);
 		if (recordingsByGenre.size() != NUMBER_OF_JAZZ_RECORDINGS) {
