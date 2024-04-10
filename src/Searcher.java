@@ -45,7 +45,7 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Recording getRecordingByName(String title) {
-		return ;
+		return getRecordingByTitle.get(title);
 	}
 
 	@Override

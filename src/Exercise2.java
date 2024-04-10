@@ -55,10 +55,12 @@ public class Exercise2 {
 			throw new AssertionError("getGenres: wrong number of genres.");
 		}
 
-//		Recording recordingByName = sut.getRecordingByName(EXISTING_TITLE);
-//		if (recordingByName == null) {
-//			throw new AssertionError("getRecordingByName: existing record wasn't found.");
-//		}
+        long start = System.currentTimeMillis();
+		Recording recordingByName = sut.getRecordingByName(EXISTING_TITLE);
+		if (recordingByName == null) {
+			throw new AssertionError("getRecordingByName: existing record wasn't found.");
+		}
+        System.out.println(System.currentTimeMillis() - start);
 
 //		Collection<Recording> recordingsAfter = sut.getRecordingsAfter(2010);
 //		if (recordingsAfter.size() != NUMBER_OF_RECORDINGS_AFTER_2010) {
