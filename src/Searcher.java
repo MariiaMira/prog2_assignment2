@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Searcher implements SearchOperations{
 	private Set<String> artists = new HashSet<>();
@@ -89,8 +90,11 @@ public class Searcher implements SearchOperations{
 
 	@Override
 	public Collection<Recording> getRecordingsByGenreAndYear(String genre, int yearFrom, int yearTo) {
-		return null;
+		Set<Recording> genreRecordings = recordingsByGenre.getOrDefault(genre, Collections.emptySet());
+
+		return ;
 	}
+
 
 	@Override
 	public Collection<Recording> offerHasNewRecordings(Collection<Recording> offered) {
