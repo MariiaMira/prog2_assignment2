@@ -114,6 +114,11 @@ public class Searcher implements SearchOperations{
 		return Collections.unmodifiableSet(newRecordings);
 	}
 
+	public Collection<Recording> optionalGetRecordingsBefore(int year){
+		Collection<Set<Recording>> recBefore = recordingByYear.headMap(year).values();
+		return Collections.unmodifiableCollection(recBefore);
+	}
+
 
 }
 
