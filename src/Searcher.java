@@ -10,7 +10,7 @@ public class Searcher implements SearchOperations{
 	private Map<String, SortedSet<Recording>> recordingsByArtist = new HashMap<>();
 
 	public Searcher(Collection<Recording> data) {
-		
+
 		Collection<Recording> recordings = data;
 
 		for (Recording recording : recordings) {
